@@ -15,11 +15,11 @@ import numpy as np
 total_words=100
 max_sequence_len=11
 
-global model
+# global model
 sess=tf.Session()
 set_session(sess)
 
-global model
+# global model
 model = Sequential()
 model.add(Embedding(total_words, 100, input_length=max_sequence_len-1))
 model.add(Bidirectional(LSTM(150, return_sequences = True)))
@@ -39,7 +39,7 @@ cp_callback=ModelCheckpoint(chk_path, save_weights_only=True,
 
 model.load_weights(chk_path)
 
-global graph
+# global graph
 graph =  tf.compat.v1.get_default_graph()
 
 def prediction(seed_text,next_words):
@@ -85,8 +85,8 @@ def prediction(seed_text,next_words):
 	for _ in range(next_words):
 		token_list = tokenizer.texts_to_sequences([seed_text])[0]
 		token_list = pad_sequences([token_list], maxlen=max_sequence_len-1, padding='pre')
-		global sess
-		global graph
+# 		global sess
+# 		global graph
 
 		with graph.as_default():
 			set_session(sess)
