@@ -43,7 +43,7 @@ protobuf==3.12.0
 py4j==0.10.7
 pycparser==2.20
 pyparsing==2.4.6
-pyspark==2.4.4
+pyspark==3.2.2
 python-dateutil==2.8.1
 pytoml==0.1.21
 pytz==2020.1
